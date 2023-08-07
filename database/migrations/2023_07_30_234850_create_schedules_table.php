@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
+            $table->string('customerName');
+            $table->unsignedBigInteger('isRegistered')->default('0');
+            $table->unsignedBigInteger('idCustomer')->nullable();
+            $table->text('reportedDefect');
+            $table->text('mechanicName')->nullable();
+            $table->dateTime('scheduleDate');
+            $table->text('information')->nullable();
             $table->timestamps();
         });
     }
